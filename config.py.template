@@ -1,0 +1,101 @@
+from dataclasses import dataclass
+from datetime import datetime
+from pathlib import Path
+
+PROJECT_DIR = Path(__file__).parent
+
+@dataclass
+class Credentials:
+    openai_api_key: str = '<your-key>'
+    #openai_api_key: str = '<your-key>'
+    hf_api_key: str = '<your-key>'
+    fw_api_key: str = '<your-key>'
+
+@dataclass
+class LLMConfig:
+    model: str
+    client_class: str | None = None
+    base_url: str | None = None
+    api_url: str | None = None
+    api_key: str | None = None
+
+@dataclass
+class NgramConfig:
+    base_url: str = "https://books.google.com/ngrams/json"
+    year_start: int = 1950
+    year_end: int = 2022
+    smoothing: int = 3
+    batch_size: int = 10
+
+class Config:
+    # Credentials
+    CREDENTIALS = Credentials()
+
+    # Supported LLMs
+    SUPPORTED_LLMS: dict[str, LLMConfig] = {
+        "gpt-4o-mini": LLMConfig(
+            model="gpt-4o-mini-2024-07-18",
+            client_class="OpenAIClient",
+        ),
+        "gpt-3.5-turbo": LLMConfig(
+            model="gpt-3.5-turbo-0125",
+            client_class="OpenAIClient",
+        ),
+        "mistral-7b": LLMConfig(
+            model="mistralai/Mistral-7B-Instruct-v0.3",
+            client_class="LocalLLMClient",
+        ),
+        "falcon3-7b": LLMConfig(
+            model="tiiuae/Falcon3-7B-Instruct",
+            client_class="LocalLLMClient",
+        ),
+        "phi4-mini": LLMConfig(
+            model="microsoft/Phi-4-mini-instruct",
+            client_class="LocalLLMClient",
+        ),
+        "phi3-mini": LLMConfig(
+            model="microsoft/Phi-3-mini-4k-instruct",
+            client_class="LocalLLMClient",
+        ),
+        "qwen2.5-0.5": LLMConfig(
+            model="Qwen/Qwen2.5-0.5B-Instruct",
+            client_class="QwenLocalClient",
+        ),
+        "qwen2.5-1.5": LLMConfig(
+            model="Qwen/Qwen2.5-1.5B-Instruct",
+            client_class="QwenLocalClient",
+        ),
+        "qwen2.5-3": LLMConfig(
+            model="Qwen/Qwen2.5-3B-Instruct",
+            client_class="QwenLocalClient",
+        ),
+        "qwen2.5-7": LLMConfig(
+            model="Qwen/Qwen2.5-7B-Instruct",
+            client_class="QwenLocalClient",
+        )
+    }
+
+    NGRAM_CONFIG = NgramConfig()
+
+    # Default settings
+    DEFAULT_RESPONSE_LLM = "gpt-4o-mini"
+
+    # File paths
+    # HOMONYMS_FILE = "homonyms.csv"
+    DATASETS = {
+        "wic": "lukasellinger/homonym-wic",
+        "homonymy": "lukasellinger/homonym-homonymy-wsd",
+        "homonymy-high-freq": "lukasellinger/homonym-high-freq-homonymy-wsd",
+        "mcl-wic": "lukasellinger/homonym-mcl-wic",
+        "homonymy-dpo": "lukasellinger/homonymy-dpo"
+    }
+
+    current_timestamp = datetime.now().strftime('%m%d%H%M')
+    RESULTS_FILE = f"results/evaluation_results-{DEFAULT_RESPONSE_LLM}-prompt_type-{current_timestamp}.jsonl"
+    PARSED_RESULTS_FILE = f"results/evaluation_results-{DEFAULT_RESPONSE_LLM}-prompt_type-parsed-{current_timestamp}.jsonl"
+
+    @classmethod
+    def get_llm_config(cls, model: str) -> LLMConfig:
+        if model not in cls.SUPPORTED_LLMS:
+            raise ValueError(f"Unsupported LLM: {model}")
+        return cls.SUPPORTED_LLMS[model]

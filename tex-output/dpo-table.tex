@@ -1,0 +1,37 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+
+
+\begin{table}[h!]%
+\centering%
+\small%
+\setlength{\tabcolsep}{4pt}%
+\begin{tabular}{@{}l c c c@{}}%
+\toprule%
+\textbf{Metric}&\textbf{ELI5}&\textbf{Simple}&\textbf{Normal}\\%
+\midrule%
+FKGL&10.59 \textcolor{own_red}{-0.34}&9.71 \textcolor{own_green}{+1.04}&5.07 \textcolor{own_green}{+0.61}\\%
+Sense Aware&98.98 \textcolor{own_green}{+3.06}&86.73 \textcolor{own_green}{+10.20}&35.71 \textcolor{own_green}{+21.43}\\%
+Multi. Def.&98.98 \textcolor{own_green}{+3.06}&86.73 \textcolor{own_green}{+11.22}&32.65 \textcolor{own_green}{+21.43}\\%
+HeSA&84.69 \textcolor{own_green}{+18.37}&67.35 \textcolor{own_green}{+36.73}&13.27 \textcolor{own_green}{+9.18}\\%
+Full&44.90 \textcolor{own_green}{+10.20}&29.59 \textcolor{own_green}{+2.04}&10.20 \textcolor{own_green}{+8.16}\\%
+Both&38.78 \textcolor{own_green}{+17.35}&21.43 \textcolor{own_green}{+13.27}&4.08 \textcolor{own_green}{+3.06}\\%
+Complete&90.82 \textcolor{own_green}{+11.22}&75.51 \textcolor{own_green}{+25.51}&19.39 \textcolor{own_green}{+14.29}\\%
+Covered&70.97 \textcolor{own_green}{+6.32}&61.29 \textcolor{own_green}{+3.28}&39.97 \textcolor{own_green}{+6.79}\\\bottomrule%
+%
+\end{tabular}%
+\caption{Comparison of response completeness and readability across different multi{-}sense aware prompts.}%
+\end{table}
+
+%
+\end{document}

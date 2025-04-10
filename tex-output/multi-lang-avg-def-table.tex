@@ -1,0 +1,45 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+
+
+\begin{table}[h!]%
+\centering%
+\small%
+\setlength{\tabcolsep}{4pt}%
+\begin{tabular}{@{}lccccccccccccccc@{}}%
+\toprule%
+\textbf{Model} & \multicolumn{3}{c}{\textbf{Normal}} & \multicolumn{3}{c}{\textbf{Simple}} & \multicolumn{3}{c}{\textbf{ELI5.}} \\%
+\cmidrule(lr){2%
+-%
+6}%
+\cmidrule(lr){7%
+-%
+11}%
+\cmidrule(lr){12%
+-%
+16}%
+&En&Fr&Ar&Ru&Zh&En&Fr&Ar&Ru&Zh&En&Fr&Ar&Ru&Zh\\%
+\midrule%
+Llama 3.1 8B&4.80&4.28&2.58&3.85&2.33&2.86&2.13&2.00&2.20&3.35&2.25&2.20&0.00&2.00&3.00\\%
+DPO Llama 3.1 8B&5.06&4.95&3.73&5.26&3.67&3.82&3.50&3.19&3.97&3.60&2.81&2.36&2.38&2.97&2.59\\%
+GPT{-}4o mini&3.93&3.35&3.11&3.36&3.49&2.32&2.23&2.42&2.23&2.45&2.00&2.10&2.00&2.00&2.08\\%
+Qwen3{-}30B A3B&5.60&4.39&3.74&4.66&5.80&2.79&2.65&2.27&3.03&3.77&2.14&2.21&2.11&2.35&2.31\\%
+Llama 4 Maverick&4.46&3.63&6.84&3.86&3.40&2.84&2.49&2.81&2.68&3.13&2.12&2.03&2.07&2.22&2.23\\%
+DeepSeek v3&4.93&4.23&4.31&4.30&4.56&2.72&2.60&2.87&2.84&3.32&2.00&2.09&2.00&2.05&2.17\\\bottomrule%
+%
+\end{tabular}%
+\caption{Scores per prompt type and language model}%
+\end{table}
+
+%
+\end{document}

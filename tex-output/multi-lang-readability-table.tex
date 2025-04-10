@@ -1,0 +1,44 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+
+
+\begin{table}[h!]%
+\centering%
+\small%
+\setlength{\tabcolsep}{4pt}%
+\begin{tabular}{@{}lccccccccc@{}}%
+\toprule%
+\textbf{Model} & \multicolumn{3}{c}{\textbf{Normal}} & \multicolumn{3}{c}{\textbf{Simple}} & \multicolumn{3}{c}{\textbf{ELI5.}} \\%
+\cmidrule(lr){2%
+-%
+4}%
+\cmidrule(lr){5%
+-%
+7}%
+\cmidrule(lr){8%
+-%
+10}%
+&En&Fr&Ru&En&Fr&Ru&En&Fr&Ru\\%
+\midrule%
+Llama 3.1 8B&60.23&41.55&{-}15.62&75.33&75.59&53.07&95.12&92.75&60.16\\%
+GPT{-}4o mini&57.72&65.57&37.52&77.20&82.32&58.17&92.91&99.12&79.36\\%
+Qwen3{-}30B A3B&60.70&69.99&35.20&78.24&81.34&62.53&92.35&97.60&81.63\\%
+Llama 4 Maverick&58.27&61.06&31.13&71.41&65.70&49.44&95.05&94.28&76.11\\%
+DeepSeek v3&60.11&68.11&38.64&73.54&77.48&54.26&91.32&97.09&73.84\\\bottomrule%
+%
+\end{tabular}%
+\caption{Scores per prompt type and language model}%
+\end{table}
+
+%
+\end{document}

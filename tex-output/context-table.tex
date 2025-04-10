@@ -1,0 +1,48 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+
+
+\begin{table}[h!]%
+\centering%
+\small%
+\begin{tabular}{@{}l c c c c c@{}}%
+\toprule%
+\textbf{Prompt / Model}&\textbf{Complete}&\textbf{Full}&\textbf{Context}&\textbf{Both}&\textbf{Avg. Covered}\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: Normal}} \\%
+Llama 3.1 8B&83.78 \textcolor{own_green}{+4.05}&52.70 \textcolor{own_green}{+15.54}&60.81 \textcolor{own_red}{-7.43}&29.73 \textcolor{own_green}{+4.05}&73.97 \textcolor{own_green}{+8.18}\\%
+GPT{-}4o mini&63.51 \textcolor{own_red}{-16.89}&56.08 \textcolor{own_green}{+6.08}&10.81 \textcolor{own_red}{-53.38}&3.38 \textcolor{own_red}{-30.41}&78.34 \textcolor{own_green}{+3.64}\\%
+Qwen3{-}30B A3B&91.22 \textcolor{own_green}{+5.41}&58.11 \textcolor{own_green}{+12.84}&85.14 \textcolor{own_green}{+4.73}&52.03 \textcolor{own_green}{+12.16}&78.47 \textcolor{own_green}{+7.93}\\%
+Llama 4 Maverick&95.95 \textcolor{own_green}{+15.54}&55.41 \textcolor{own_green}{+8.78}&82.43 \textcolor{own_green}{+22.30}&41.89 \textcolor{own_green}{+15.54}&77.72 \textcolor{own_green}{+5.28}\\%
+DeepSeek v3&76.35 \textcolor{own_green}{+6.76}&66.22 \textcolor{own_green}{+12.16}&22.30 \textcolor{own_red}{-1.35}&12.16 \textcolor{own_green}{+4.05}&84.72 \textcolor{own_green}{+7.45}\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: Simple}} \\%
+Llama 3.1 8B&41.89 \textcolor{own_green}{+10.14}&31.08 \textcolor{own_green}{+13.51}&15.54 \textcolor{own_red}{-4.05}&4.73 \textcolor{own_red}{-0.68}&60.55 \textcolor{own_green}{+8.93}\\%
+GPT{-}4o mini&57.43 \textcolor{own_green}{+35.14}&38.51 \textcolor{own_green}{+20.95}&23.65 \textcolor{own_green}{+16.22}&4.73 \textcolor{own_green}{+2.03}&66.71 \textcolor{own_green}{+13.73}\\%
+Qwen3{-}30B A3B&66.22 \textcolor{own_green}{+21.62}&47.97 \textcolor{own_green}{+16.89}&30.41 \textcolor{own_green}{+8.11}&12.16 \textcolor{own_green}{+3.38}&72.69 \textcolor{own_green}{+11.87}\\%
+Llama 4 Maverick&77.70 \textcolor{own_green}{+39.19}&47.97 \textcolor{own_green}{+27.70}&60.14 \textcolor{own_green}{+33.11}&30.41 \textcolor{own_green}{+21.62}&73.30 \textcolor{own_green}{+17.83}\\%
+DeepSeek v3&56.08 \textcolor{own_green}{+30.41}&47.30 \textcolor{own_green}{+27.03}&12.84 \textcolor{own_green}{+7.43}&4.05 \textcolor{own_green}{+4.05}&73.49 \textcolor{own_green}{+18.68}\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: ELI5}} \\%
+Llama 3.1 8B&39.86 \textcolor{own_green}{+35.14}&22.30 \textcolor{own_green}{+20.95}&25.68 \textcolor{own_green}{+21.62}&8.11 \textcolor{own_green}{+7.43}&54.40 \textcolor{own_green}{+21.21}\\%
+GPT{-}4o mini&30.41 \textcolor{own_green}{+29.05}&24.32 \textcolor{own_green}{+22.97}&7.43 \textcolor{own_green}{+7.43}&1.35 \textcolor{own_green}{+1.35}&52.98 \textcolor{own_green}{+21.13}\\%
+Qwen3{-}30B A3B&59.46 \textcolor{own_green}{+43.24}&34.46 \textcolor{own_green}{+25.68}&35.81 \textcolor{own_green}{+25.68}&10.81 \textcolor{own_green}{+8.11}&62.52 \textcolor{own_green}{+22.43}\\%
+Llama 4 Maverick&54.05 \textcolor{own_green}{+50.68}&33.78 \textcolor{own_green}{+33.11}&33.11 \textcolor{own_green}{+30.41}&12.84 \textcolor{own_green}{+12.84}&61.44 \textcolor{own_green}{+26.96}\\%
+DeepSeek v3&50.00 \textcolor{own_green}{+47.97}&35.81 \textcolor{own_green}{+35.14}&19.59 \textcolor{own_green}{+18.24}&5.41 \textcolor{own_green}{+5.41}&62.96 \textcolor{own_green}{+31.24}\\\bottomrule%
+%
+\end{tabular}%
+\caption{Comparison of response completeness and readability across different multi{-}sense aware prompts.}%
+\end{table}
+
+%
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+
+
+\begin{table}[h!]%
+\centering%
+\small%
+\setlength{\tabcolsep}{4pt}%
+\begin{tabular}{@{}lccccccccccccccc@{}}%
+\toprule%
+\textbf{Prompt / Model} & \multicolumn{5}{c}{\textbf{Sense Aware}} & \multicolumn{5}{c}{\textbf{Multi. Def.}} & \multicolumn{5}{c}{\textbf{HeSA}} \\%
+\cmidrule(lr){2%
+-%
+6}%
+\cmidrule(lr){7%
+-%
+11}%
+\cmidrule(lr){12%
+-%
+16}%
+&En&Fr&Ar&Ru&Zh&En&Fr&Ar&Ru&Zh&En&Fr&Ar&Ru&Zh\\%
+\midrule%
+\multicolumn{16}{l}{\textbf{Prompt: Normal}} \\%
+Llama 3.1 8B&\textbf{96.97}&14.97&10.26&6.33&5.10&\textbf{95.96}&12.24&10.26&5.49&4.59&56.23&9.18&0.00&2.95&0.51\\%
+DPO Llama 3.1 8B&\textbf{99.66}&\textbf{99.32}&\textbf{99.15}&\textbf{99.16}&\textbf{98.47}&\textbf{99.66}&\textbf{98.30}&\textbf{98.29}&\textbf{97.89}&\textbf{96.94}&\textbf{80.13}&\textbf{95.24}&\textbf{86.32}&\textbf{94.51}&\textbf{53.06}\\%
+GPT{-}4o mini&93.94&78.91&92.31&90.30&84.69&93.94&77.89&\textbf{92.31}&89.45&83.67&28.62&17.35&17.09&27.85&16.33\\%
+Qwen3{-}30B A3B&94.61&86.39&\textbf{98.29}&89.87&\textbf{100.00}&93.60&84.01&91.45&86.50&\textbf{98.98}&\textbf{65.99}&\textbf{37.41}&\textbf{77.78}&\textbf{42.62}&\textbf{83.16}\\%
+Llama 4 Maverick&96.30&54.76&74.36&74.68&45.41&95.29&47.28&73.50&71.73&43.37&47.14&28.91&21.37&31.22&16.84\\%
+DeepSeek v3&94.28&\textbf{87.76}&91.45&\textbf{91.56}&87.76&93.60&\textbf{86.39}&91.45&\textbf{90.30}&86.22&20.88&23.13&30.77&18.57&46.94\\%
+\midrule%
+\multicolumn{16}{l}{\textbf{Prompt: Simple}} \\%
+Llama 3.1 8B&64.31&7.48&5.98&2.11&8.67&62.96&5.10&5.98&2.11&8.67&6.06&2.38&0.00&0.00&0.51\\%
+DPO Llama 3.1 8B&\textbf{92.93}&\textbf{93.54}&\textbf{96.58}&\textbf{99.58}&\textbf{93.88}&\textbf{92.93}&\textbf{89.12}&\textbf{96.58}&\textbf{98.31}&\textbf{93.37}&\textbf{54.88}&\textbf{69.39}&\textbf{61.54}&\textbf{73.84}&\textbf{31.63}\\%
+GPT{-}4o mini&63.30&53.06&76.07&43.88&75.51&63.30&53.06&76.07&43.46&75.51&2.69&0.00&0.00&3.38&1.02\\%
+Qwen3{-}30B A3B&\textbf{76.77}&\textbf{59.52}&69.23&\textbf{67.51}&\textbf{82.65}&\textbf{75.76}&\textbf{57.82}&65.81&\textbf{66.24}&\textbf{81.63}&11.45&\textbf{7.48}&\textbf{12.82}&\textbf{11.39}&24.49\\%
+Llama 4 Maverick&70.03&28.57&44.44&49.37&68.88&69.36&26.19&44.44&46.84&60.71&\textbf{15.15}&5.78&1.71&8.86&\textbf{26.53}\\%
+DeepSeek v3&63.97&47.96&\textbf{80.34}&65.40&73.98&63.97&47.28&\textbf{80.34}&64.14&73.47&2.02&1.70&4.27&8.86&13.27\\%
+\midrule%
+\multicolumn{16}{l}{\textbf{Prompt: ELI5}} \\%
+Llama 3.1 8B&7.07&7.48&0.85&1.27&0.51&6.73&3.40&0.00&0.42&0.51&0.67&4.42&0.85&0.84&0.00\\%
+DPO Llama 3.1 8B&\textbf{35.35}&\textbf{35.03}&\textbf{57.26}&\textbf{63.29}&\textbf{34.69}&\textbf{32.66}&\textbf{29.25}&\textbf{51.28}&\textbf{54.43}&\textbf{32.14}&\textbf{17.85}&\textbf{18.71}&\textbf{30.77}&\textbf{42.19}&\textbf{14.80}\\%
+GPT{-}4o mini&5.72&6.80&11.11&2.53&6.63&5.72&6.80&10.26&2.11&6.12&0.00&0.34&0.85&0.84&0.51\\%
+Qwen3{-}30B A3B&\textbf{22.22}&\textbf{17.35}&11.11&\textbf{14.35}&\textbf{14.29}&\textbf{19.87}&\textbf{11.56}&7.69&\textbf{13.08}&8.16&\textbf{4.71}&\textbf{8.16}&\textbf{4.27}&1.69&\textbf{6.63}\\%
+Llama 4 Maverick&10.77&12.93&11.97&9.70&9.69&8.42&10.20&11.97&7.59&6.63&3.70&5.10&0.85&\textbf{2.53}&3.06\\%
+DeepSeek v3&8.08&8.16&\textbf{12.82}&8.86&11.73&8.08&7.82&\textbf{12.82}&8.02&\textbf{11.73}&0.00&2.04&0.00&0.84&0.00\\\bottomrule%
+%
+\end{tabular}%
+\caption{Evaluation scores per prompt type and language}%
+\end{table}
+
+%
+\end{document}
