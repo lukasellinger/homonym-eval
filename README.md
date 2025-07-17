@@ -3,6 +3,8 @@ This repository contains the code and data for our paper:
 
 **Simplifications are Absolutists: How Simplified Language Reduces Word Sense Awareness in LLM-Generated Definitions**
 
+> ⚠️ **Note**: The project structure is still a work in progress.
+
 ## 🚀 Additional Resources
 ### 🤖 Fine-tuned Model (DPO)
 - Hugging Face: [lukasellinger/homonymy-dpo-llama-v3p1-8b-instruct](https://huggingface.co/lukasellinger/homonymy-dpo-llama-v3p1-8b-instruct)
@@ -13,6 +15,7 @@ This repository contains the code and data for our paper:
 ### 📊 Evaluation Datasets
 - [HoWN Dataset](https://huggingface.co/datasets/lukasellinger/homonyms-with-wordnet-wsd)
 - [ML-WiC Dataset](https://huggingface.co/datasets/ml-wic)
+- 🔍 Evaluation input and results can be found in the `/batches` directory.
 
 ## Citation
 
