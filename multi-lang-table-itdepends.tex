@@ -1,0 +1,56 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+
+
+\begin{table}[h!]%
+\centering%
+\small%
+\setlength{\tabcolsep}{4pt}%
+\begin{tabular}{@{}lccccc@{}}%
+\toprule%
+\textbf{Prompt / Model} & \multicolumn{5}{c}{\textbf{Sense Aware}} \\%
+\cmidrule(lr){2%
+-%
+6}%
+&En&Fr&Ar&Ru&Zh\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: Normal}} \\%
+Llama 3.1 8B&\textit{96.33}&15.12&11.30&6.45&4.59\\%
+GPT{-}4o mini&93.00&79.38&93.04&91.13&84.69\\%
+Qwen3{-}30B A3B&94.00&86.60&\textbf{98.26}&89.92&\textbf{100.00}\\%
+Llama 4 Maverick&\textit{96.33}&54.64&73.91&76.61&44.90\\%
+DeepSeek v3&93.33&\textit{87.97}&91.30&\textit{91.94}&\textit{87.76}\\%
+Uncertain DPO&\textbf{96.67}&\textbf{97.94}&\textit{93.91}&\textbf{99.60}&84.69\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: Simple}} \\%
+Llama 3.1 8B&63.67&7.56&6.96&2.42&7.65\\%
+GPT{-}4o mini&62.67&52.92&\textit{77.39}&44.35&\textit{75.00}\\%
+Qwen3{-}30B A3B&\textbf{76.00}&\textit{59.79}&69.57&\textit{68.95}&\textbf{82.65}\\%
+Llama 4 Maverick&\textit{69.33}&28.18&44.35&50.00&69.39\\%
+DeepSeek v3&63.33&48.11&\textbf{80.87}&65.32&74.49\\%
+Uncertain DPO&60.67&\textbf{73.20}&72.17&\textbf{79.44}&64.29\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: ELI5}} \\%
+Llama 3.1 8B&7.00&7.56&0.87&1.21&0.51\\%
+GPT{-}4o mini&5.67&6.87&10.43&2.82&6.63\\%
+Qwen3{-}30B A3B&\textbf{21.67}&\textit{17.18}&10.43&\textit{15.32}&\textit{14.29}\\%
+Llama 4 Maverick&11.00&13.06&11.30&9.27&9.69\\%
+DeepSeek v3&8.00&8.25&\textit{13.04}&8.06&10.71\\%
+Uncertain DPO&\textit{13.33}&\textbf{26.12}&\textbf{46.96}&\textbf{18.95}&\textbf{17.35}\\\bottomrule%
+%
+\end{tabular}%
+\caption{Evaluation scores per prompt type and language}%
+\end{table}
+
+%
+\end{document}

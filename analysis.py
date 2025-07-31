@@ -24,6 +24,7 @@ from latex.create_dpo_table import generate_dpo_table
 from latex.create_duplicate_wordnet_table import generate_duplicate_wordnet_table
 from latex.create_hown_table import generate_hown_overview_table
 from latex.create_mulit_lang_table import generate_multi_lang_table
+from latex.create_mulit_lang_table_itdepends import generate_multi_lang_table_it_depends
 from latex.create_multi_lang_avg_def_table import generate_multi_lang_avg_def_table
 from latex.create_multi_lang_readability import generate_multi_lang_readability_table
 from reader import JSONLineReader
@@ -46,11 +47,12 @@ class Analysis:
     LANGUAGES = ['en', 'fr', 'ar', 'ru', 'zh']
     MODELS = {
         'Llama 3.1 8B': 'llama-v3p1-8b-instruct',
-        'DPO Llama 3.1 8B': 'dpo-llama-v3p1-8b-instruct',
+        #'DPO Llama 3.1 8B': 'dpo-llama-v3p1-8b-instruct',
         'GPT-4o mini': 'gpt-4o-mini',
         'Qwen3-30B A3B': 'qwen3-30b-a3b',
         'Llama 4 Maverick': 'llama4-maverick-instruct-basic',
         'DeepSeek v3': 'deepseek-v3',
+        'Uncertain DPO': 'uncertain-dpo',
     }
 
     def filter_hown_valid_words(self, stats):
@@ -251,10 +253,11 @@ class Analysis:
                     percentages_hesa.append(percentage_hesa)
 
                 table_data[type_][model].extend(percentages_sense_aware)
-                table_data[type_][model].extend(percentages_multi)
-                table_data[type_][model].extend(percentages_hesa)
+                #table_data[type_][model].extend(percentages_multi)
+                #table_data[type_][model].extend(percentages_hesa)
 
-        generate_multi_lang_table(table_data)
+        #generate_multi_lang_table(table_data)
+        generate_multi_lang_table_it_depends(table_data)
 
     def multi_lang_avg_def_table(self):
         stats = self.get_mclwic_stats()
@@ -731,4 +734,4 @@ class Analysis:
 
 
 if __name__ == "__main__":
-    Analysis().mclwic_lang_models_graph()
+    Analysis().multi_lang_table()

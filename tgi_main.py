@@ -10,15 +10,15 @@ from reader import JSONLineReader
 TYPES = ['simple', 'child', 'normal']
 LANGUAGES = ['en', 'fr', 'ru', 'ar', 'zh']
 OUTPUT_FILE = "batches/{dataset}/{model}/{dataset}-responses-{model}-{prompt_type}.jsonl"
-TGI_BASE_URL = "https://api.fireworks.ai/inference/v1"
-MODEL = "llama-v3p1-8b-instruct" #"deepseek-v3" #"llama4-maverick-instruct-basic" #"qwen3-30b-a3b"
+TGI_BASE_URL = "https://openrouter.ai/api/v1"
+MODEL = "qwen3-32b" #"deepseek-v3" #"llama4-maverick-instruct-basic" #"qwen3-30b-a3b"
 
 # LLM client
 CLIENT = OpenAIClient(LLMConfig(
-    model=f"accounts/fireworks/models/{MODEL}",
+    model=f"qwen/{MODEL}",
     client_class="OpenAIClient",
     base_url=TGI_BASE_URL,
-    api_key=Credentials.fw_api_key,
+    api_key=Credentials.openrouter_api_key,
 ))
 
 def generate_model_response(homonyms: list[dict], prompt_template: str, output_file: str):

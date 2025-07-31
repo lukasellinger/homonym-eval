@@ -55,6 +55,8 @@ class OpenAIClient(LLMClient):
                 model=self.model,
                 messages=self._get_messages(prompt),
                 temperature=temperature,
+                extra_body={'reasoning': {'exclude': True},
+                            'provider': {'sort': 'throughput'}} if self.config.base_url == 'https://openrouter.ai/api/v1' else {},
                 #seed=42,
             )
             return response.choices[0].message.content.strip()

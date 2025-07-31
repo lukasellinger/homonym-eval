@@ -10,10 +10,10 @@ from llm_client import OpenAIClient
 from reader import JSONLineReader
 
 DATASET = 'mcl-wic' #'homonymy-high-freq'
-TYPES = ['simple', 'child', 'normal']
+TYPES = ['simple', 'normal', 'child']
 LANGUAGES = ['en', 'fr', 'ar', 'ru', 'zh']
 CONTEXTS = [False]
-MODEL = 'dpo-llama-v3p1-8b-instruct'
+MODEL = 'uncertain-dpo'
 OUTPUT_FILE = f'{PROJECT_DIR}/batches/{DATASET}/{MODEL}/{DATASET}-{MODEL}-input-judge.jsonl'
 
 client = OpenAIClient(LLMConfig(
@@ -47,7 +47,7 @@ for sub_judgement in ['marker', 'definition']:
                 prompt_key = f"{TYPE}_{suffix}"
                 prompt = PROMPT_TEMPLATES.get(prompt_key)
 
-                RESPONSE_FILE = f'{PROJECT_DIR}/batches/{DATASET}/{MODEL}/{DATASET}-responses-{MODEL}-{prompt_key}.jsonl'
+                RESPONSE_FILE = f'{PROJECT_DIR}/batches/{DATASET}/{MODEL}/{DATASET}-responses-{MODEL}_{prompt_key}.jsonl'
 
                 dataset_response = JSONLineReader().read(RESPONSE_FILE)
                 for idx, entry in enumerate(dataset_response):
