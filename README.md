@@ -6,6 +6,9 @@ This repository contains the code and data for our paper:
 > ⚠️ **Note**: The project structure is still a work in progress.
 
 ## 🚀 Additional Resources
+### 📌 Extended Results and Materials
+- All additional supporting materials and results are available here: [Extended Results](https://github.com/lukasellinger/homonym-eval/tree/main/extended_results.pdf)
+  
 ### 🤖 Fine-tuned Model (DPO)
 - Hugging Face: [lukasellinger/homonymy-dpo-llama-v3p1-8b-instruct](https://huggingface.co/lukasellinger/homonymy-dpo-llama-v3p1-8b-instruct)
 
