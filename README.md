@@ -29,6 +29,7 @@ If you use any of the work, please cite the following paper:
 	title = {Simplifications are {Absolutists}: {How} {Simplified} {Language} {Reduces} {Word} {Sense} {Awareness} in {LLM}-{Generated} {Definitions}},
 	url = {http://arxiv.org/abs/2507.11981},
 	author = {Ellinger, Lukas and Anschütz, Miriam and Groh, Georg},
+	year={2025},
 	annote = {Comment: Accepted by RANLP 2025},
 }
 ```
