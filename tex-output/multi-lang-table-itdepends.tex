@@ -1,0 +1,59 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+
+
+\begin{table}[h!]%
+\centering%
+\small%
+\setlength{\tabcolsep}{4pt}%
+\begin{tabular}{@{}lccccc@{}}%
+\toprule%
+\textbf{Prompt / Model} & \multicolumn{5}{c}{\textbf{Sense Aware}} \\%
+\cmidrule(lr){2%
+-%
+6}%
+&En&Fr&Ar&Ru&Zh\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: Normal}} \\%
+Llama 3.1 8B&96.95&15.17&10.62&6.52&4.66\\%
+DPO Llama 3.1 8B&\textbf{99.66}&\textbf{99.31}&\textbf{99.12}&\textit{99.13}&\textit{98.45}\\%
+GPT{-}4o mini&93.90&79.31&92.92&90.43&84.46\\%
+Qwen3{-}30B A3B&94.58&86.55&\textit{98.23}&90.00&\textbf{100.00}\\%
+Llama 4 Maverick&96.27&54.83&74.34&75.65&45.08\\%
+DeepSeek v3&94.24&87.93&91.15&91.74&87.56\\%
+Uncertain DPO&\textit{97.63}&\textit{97.93}&93.81&\textbf{99.57}&84.46\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: Simple}} \\%
+Llama 3.1 8B&64.41&7.59&6.19&2.17&7.77\\%
+DPO Llama 3.1 8B&\textbf{92.88}&\textbf{93.45}&\textbf{96.46}&\textbf{99.57}&\textbf{94.30}\\%
+GPT{-}4o mini&63.05&52.76&76.99&43.91&75.13\\%
+Qwen3{-}30B A3B&\textit{76.61}&59.66&69.03&67.83&\textit{82.38}\\%
+Llama 4 Maverick&69.83&28.28&45.13&48.70&68.91\\%
+DeepSeek v3&63.73&47.93&\textit{80.53}&65.22&74.09\\%
+Uncertain DPO&61.02&\textit{73.10}&71.68&\textit{79.13}&64.25\\%
+\midrule%
+\multicolumn{6}{l}{\textbf{Prompt: ELI5}} \\%
+Llama 3.1 8B&7.12&7.59&0.88&1.30&0.52\\%
+DPO Llama 3.1 8B&\textbf{35.59}&\textbf{35.17}&\textbf{55.75}&\textbf{63.48}&\textbf{33.68}\\%
+GPT{-}4o mini&5.42&6.90&10.62&2.61&6.74\\%
+Qwen3{-}30B A3B&\textit{22.03}&17.24&9.73&14.78&14.51\\%
+Llama 4 Maverick&10.85&13.10&11.50&9.57&9.84\\%
+DeepSeek v3&8.14&8.28&13.27&8.70&10.88\\%
+Uncertain DPO&13.22&\textit{25.86}&\textit{46.90}&\textit{19.13}&\textit{17.62}\\\bottomrule%
+%
+\end{tabular}%
+\caption{Evaluation scores per prompt type and language}%
+\end{table}
+
+%
+\end{document}

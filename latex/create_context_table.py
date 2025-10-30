@@ -26,22 +26,22 @@ def generate_context_table(data):
     with doc.create(Table(position='h!')) as table:
         table.append(NoEscape(r'\centering'))
         table.append(NoEscape(r'\small'))
-        tabular = Tabular('l c c c c c c c c c c c c', booktabs=True)
+        tabular = Tabular('l c c c c c c c c c c c c c c c c', booktabs=True)
 
         tabular.append(NoEscape(
             r'\textbf{Model} & \multicolumn{2}{c}{\textbf{FKGL}} & \multicolumn{2}{c}{\textbf{Sense Aware}} & '
             r'\multicolumn{2}{c}{\textbf{Multi. Def}} & \multicolumn{2}{c}{\textbf{HeSA}} & '
-            r'\multicolumn{2}{c}{\textbf{Full}} & \multicolumn{2}{c}{\textbf{Both}} \\'
+            r'\multicolumn{2}{c}{\textbf{Full}} & \multicolumn{2}{c}{\textbf{Both}} & \multicolumn{2}{c}{\textbf{Complete}} & \multicolumn{2}{c}{\textbf{Covered}} \\'
         ))
 
         for prompt, models in data.items():
             tabular.add_hline()
             if prompt == 'child':
-                tabular.append(NoEscape(r'\multicolumn{13}{l}{\textbf{Prompt: ELI5}} \\'))
+                tabular.append(NoEscape(r'\multicolumn{15}{l}{\textbf{Prompt: ELI5}} \\'))
             elif prompt == 'simple':
-                tabular.append(NoEscape(r'\multicolumn{13}{l}{\textbf{Prompt: Simple}} \\'))
+                tabular.append(NoEscape(r'\multicolumn{15}{l}{\textbf{Prompt: Simple}} \\'))
             elif prompt == 'normal':
-                tabular.append(NoEscape(r'\multicolumn{13}{l}{\textbf{Prompt: Normal}} \\'))
+                tabular.append(NoEscape(r'\multicolumn{15}{l}{\textbf{Prompt: Normal}} \\'))
 
             for model, values in models.items():
                 row_values = [model]

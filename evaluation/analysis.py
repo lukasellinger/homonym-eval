@@ -47,7 +47,7 @@ class Analysis:
     LANGUAGES = ['en', 'fr', 'ar', 'ru', 'zh']
     MODELS = {
         'Llama 3.1 8B': 'llama-v3p1-8b-instruct',
-        #'DPO Llama 3.1 8B': 'dpo-llama-v3p1-8b-instruct',
+        'DPO Llama 3.1 8B': 'dpo-llama-v3p1-8b-instruct',
         'GPT-4o mini': 'gpt-4o-mini',
         'Qwen3-30B A3B': 'qwen3-30b-a3b',
         'Llama 4 Maverick': 'llama4-maverick-instruct-basic',
@@ -312,6 +312,8 @@ class Analysis:
                     diff_entry(c_ctx.get('context'), c.get('context')),
                     diff_entry(c_ctx.get('full'), c.get('full')),
                     diff_entry(c_ctx.get('both'), c.get('both')),
+                    diff_entry(c_ctx.get('complete'), c.get('complete')),
+                    diff_entry(s_ctx, s) if s and s_ctx else (s_ctx, None),
                 ]
 
                 table_data_small[type_][model] = [

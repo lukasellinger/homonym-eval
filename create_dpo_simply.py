@@ -2,8 +2,8 @@ from collections import defaultdict
 
 from datasets import load_dataset
 
-from analysis import Analysis
 from config import Credentials
+from evaluation.analysis import Analysis
 from reader import JSONLineReader
 
 reader = JSONLineReader()
