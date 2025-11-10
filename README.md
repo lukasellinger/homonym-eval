@@ -1,7 +1,8 @@
 # Simplifications are Absolutists
 This repository contains the code and data for our paper:
 
-**Simplifications are Absolutists: How Simplified Language Reduces Word Sense Awareness in LLM-Generated Definitions**
+**Simplifications are Absolutists: How Simplified Language Reduces Word Sense Awareness in LLM-Generated Definitions** <br>
+see: [arxiv](https://arxiv.org/abs/2507.11981) or [proceedings](https://aclanthology.org/2025.ranlp-1.42)
 
 > ⚠️ **Note**: The project structure is still a work in progress.
 
@@ -53,11 +54,16 @@ We evaluated using the batch api of openai. Therefore, we have multiple steps:
 If you use any of the work, please cite the following paper:
 
 ```tex
-@misc{ellinger_simplifications_2025,
-	title = {Simplifications are {Absolutists}: {How} {Simplified} {Language} {Reduces} {Word} {Sense} {Awareness} in {LLM}-{Generated} {Definitions}},
-	url = {http://arxiv.org/abs/2507.11981},
-	author = {Ellinger, Lukas and Anschütz, Miriam and Groh, Georg},
-	year={2025},
-	annote = {Comment: Accepted by RANLP 2025},
+@InProceedings{ellinger-anschtz-groh:2025:RANLP,
+  author    = {Ellinger, Lukas  and  AnschÃ¼tz, Miriam  and  Groh, Georg},
+  title     = {Simplifications Are Absolutists: How Simplified Language Reduces Word Sense Awareness in LLM-Generated Definitions},
+  booktitle      = {Proceedings of the 15th International Conference on Recent Advances in Natural Language Processing - Natural Language Processing in the Generative AI era},
+  month          = {September},
+  year           = {2025},
+  address        = {Varna, Bulgaria},
+  publisher      = {INCOMA Ltd., Shoumen, Bulgaria},
+  pages     = {342--351},
+  abstract  = {Large Language Models (LLMs) can provide accurate word definitions and explanations for any context. However, the scope of the definition changes for different target groups, like children or language learners. This is especially relevant for homonymsâ€”words with multiple meaningsâ€”where oversimplification might risk information loss by omitting key senses, potentially misleading users who trust LLM outputs. We investigate how simplification impacts homonym definition quality across three target groups: Normal, Simple, and ELI5. Using two novel evaluation datasets spanning multiple languages, we test DeepSeek v3, Llama 4 Maverick, Qwen3-30B A3B, GPT-4o mini, and Llama 3.1 8B via LLM-as-Judge and human annotations. Our results show that simplification drastically degrades definition completeness by neglecting polysemy, increasing the risk of misunderstanding. Fine-tuning Llama 3.1 8B with Direct Preference Optimization substantially improves homonym response quality across all prompt types. These findings highlight the need to balance simplicity and completeness in educational NLP to ensure reliable, context-aware definitions for all learners.},
+  url       = {https://aclanthology.org/2025.ranlp-1.42}
 }
 ```
